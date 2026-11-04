@@ -18,7 +18,10 @@ let tabs = [
     TabModel(label: "Home", icon: "house.fill", view: .home),
     TabModel(label: "Shelf", icon: "tray.fill", view: .shelf),
     TabModel(label: "Brain", icon: "sparkle", view: .brain)
-]
+].filter { tab in
+    // Brain reads ~/Notes; hide it for anyone who doesn't have that folder.
+    tab.view != .brain || FileManager.default.fileExists(atPath: NSHomeDirectory() + "/Notes")
+}
 
 struct TabSelectionView: View {
     @ObservedObject var coordinator = BoringViewCoordinator.shared

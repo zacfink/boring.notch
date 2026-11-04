@@ -1,3 +1,13 @@
+> [!NOTE]
+> **This is a personal fork ([zacfink/boring.notch](https://github.com/zacfink/boring.notch), branch `zac`) of [TheBoredTeam/boring.notch](https://github.com/TheBoredTeam/boring.notch).** All credit for Boring Notch goes to its authors; everything not listed here is upstream's.
+>
+> **What the fork adds**
+> - **Brain tab** (sparkle icon): four cards. Claude task status, the top open nudge from `~/Notes/nudges.md`, your next calendar event in the coming 7 days, and a quick-capture box that appends to `~/Notes/inbox.md`. It is built around the author's own `~/Notes` setup, so the tab only appears if a `~/Notes` folder exists.
+> - **Claude live activity:** while `~/Projects/screen-intelligence/runtime/status.json` says a task is `running`/`waiting` (updated in the last 30 min), the closed notch shows a sparkle and the step count.
+> - **App Sandbox is off** (needed to read `~/Notes`) and Sparkle auto-update is off so upstream doesn't overwrite the fork.
+>
+> **Install:** no prebuilt release. With Xcode installed, run `./install.sh`: it builds Release, signs ad hoc without the hardened runtime (otherwise the bundled MediaRemoteAdapter framework is rejected), quits any running copy, installs over `/Applications/boringNotch.app` and launches it. The rest of this README is upstream's.
+
 <h1 align="center">
   <br>
   <a href="http://theboring.name"><img src="https://framerusercontent.com/images/RFK4vs0kn8pRMuOO58JeyoemXA.png?scale-down-to=256" alt="Boring Notch" width="150"></a>
